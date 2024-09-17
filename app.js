@@ -38,7 +38,7 @@ function preload() {
 }
 
 function create() {
-    bird = this.physics.add.sprite(100, 245, 'bird');
+    bird = this.physics.add.sprite(50, 50, 'bird');
     bird.setCollideWorldBounds(true);
 
     pipes = this.physics.add.group();
@@ -101,8 +101,8 @@ function addPipe() {
 
     for (let i = 0; i < 10; i++) {
         if (i !== hole && i !== hole + 1) {
-            let pipe = pipes.create(800, i * 60, 'pipe');
-            pipe.setVelocityX(-200);
+            let pipe = pipes.create(800, i * 60, 'pipe'); // Start from the right edge of the screen
+            pipe.setVelocityX(-200); // Move to the left
             pipe.body.allowGravity = false;
             pipe.body.immovable = true;
             pipe.passed = false;
